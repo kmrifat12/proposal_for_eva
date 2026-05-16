@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website - KM Rifat ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+Bengali:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Serif Bengali', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .heart-bg {
+            position: fixed;
+            font-size: 24px;
+            animation: heartFloat 10s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        @keyframes heartFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .welcome-section {
+            margin-bottom: 40px;
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        .welcome-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #ffd700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .welcome-sub {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .name-section {
+            margin: 50px 0;
+            animation: fadeInUp 2s ease-out 0.5s both;
+        }
+
+        .name-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite, scalePulse 3s ease-in-out infinite;
+            letter-spacing: 3px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes scalePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .name-decoration {
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff6b6b, #feca57, transparent);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .shayari-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 40px 0;
+            animation: fadeIn 2s ease-out 1s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shayari-section::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            color: rgba(255, 105, 180, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .shayari-label {
+            font-size: 0.9rem;
+            color: #ff9ff3;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .shayari-text {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            line-height: 2.2;
+            font-style: italic;
+        }
+
+        .shayari-text .line {
+            display: block;
+            margin: 10px 0;
+            opacity: 0;
+            animation: lineReveal 1s ease-out forwards;
+        }
+
+        .shayari-text .line:nth-child(1) { animation-delay: 1.5s; }
+        .shayari-text .line:nth-child(2) { animation-delay: 2s; }
+        .shayari-text .line:nth-child(3) { animation-delay: 2.5s; }
+        .shayari-text .line:nth-child(4) { animation-delay: 3s; }
+
+        @keyframes lineReveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-section {
+            margin: 50px 0;
+            animation: fadeIn 2s ease-out 2s both;
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            border-radius: 25px;
+            padding: 40px 35px;
+            position: relative;
+        }
+
+        .message-box::after {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(10px);
+        }
+
+        .message-text {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 2.4;
+        }
+
+        .message-text p {
+            margin-bottom: 15px;
+        }
+
+        .highlight-name {
+            color: #ff9ff3;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .button-section {
+            margin: 50px 0;
+            animation: fadeInUp 2s ease-out 3s both;
+        }
+
+        .reveal-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(45deg, #ff6b6b, #ff9ff3);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            transition: all 0.4s ease;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reveal-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .reveal-btn:hover::before {
+            left: 100%;
+        }
+
+        .reveal-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        .love-box {
+            display: none;
+            margin-top: 40px;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 159, 243, 0.1));
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            animation: loveBoxAppear 1.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-box::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes loveBoxAppear {
+            0% { opacity: 0; transform: scale(0.5) translateY(50px); }
+            50% { transform: scale(1.05) translateY(-10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .love-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: #ff6b6b;
+            text-shadow: 0 0 40px rgba(255, 107, 107, 0.6);
+            position: relative;
+            z-index: 2;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            14% { transform: scale(1.15); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.15); }
+            70% { transform: scale(1); }
+        }
+
+        .love-subtext {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .response-section {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .response-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            margin: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 2px solid;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Noto Serif Bengali', serif;
+            background: transparent;
+            text-decoration: none;
+        }
+
+        .btn-yes {
+            border-color: #00ff88;
+            color: #00ff88;
+        }
+
+        .btn-yes:hover {
+            background: #00ff88;
+            color: #0f0c29;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-no {
+            border-color: #ff4757;
+            color: #ff4757;
+        }
+
+        .btn-no:hover {
+            background: #ff4757;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .final-message {
+            margin-top: 25px;
+            font-size: 1.3rem;
+            font-family: 'Noto Serif Bengali', serif;
+            min-height: 40px;
+        }
+
+        /* Notification Settings */
+        .settings-box {
+            display: none;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .settings-box h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .settings-box p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+        }
+
+        .save-btn {
+            display: inline-block;
+            padding: 12px 40px;
+            margin-top: 15px;
+            background: linear-gradient(45deg, #ff6b6b, #ff9ff3);
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .notification-info {
+            display: none;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .notification-info h4 {
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+
+        .notification-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .welcome-text { font-size: 2.5rem; }
+            .name-text { font-size: 3rem; }
+            .love-text { font-size: 3.5rem; }
+            .shayari-text { font-size: 1.1rem; }
+            .message-text { font-size: 1.1rem; }
+            .response-btn { padding: 12px 25px; font-size: 1rem; }
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+<!-- Floating hearts -->
+<div class="heart-bg" style="left: 5%; animation-delay: 0s;">💕</div>
+<div class="heart-bg" style="left: 15%; animation-delay: 2s;">💖</div>
+<div class="heart-bg" style="left: 25%; animation-delay: 4s;">❤️</div>
+<div class="heart-bg" style="left: 35%; animation-delay: 1s;">💗</div>
+<div class="heart-bg" style="left: 45%; animation-delay: 3s;">💕</div>
+<div class="heart-bg" style="left: 55%; animation-delay: 5s;">💖</div>
+<div class="heart-bg" style="left: 65%; animation-delay: 2.5s;">❤️</div>
+<div class="heart-bg" style="left: 75%; animation-delay: 4.5s;">💗</div>
+<div class="heart-bg" style="left: 85%; animation-delay: 1.5s;">💕</div>
+<div class="heart-bg" style="left: 95%; animation-delay: 3.5s;">💖</div>
+
+<div class="container">
+    <!-- Welcome -->
+    <div class="welcome-section">
+        <div class="welcome-text">Welcome to My Website</div>
+        <div class="welcome-sub">A Special Place For Someone Special</div>
+    </div>
+
+    <!-- Name -->
+    <div class="name-section">
+        <div class="name-text">KM RIFAT</div>
+        <div class="name-decoration"></div>
+    </div>
+
+    <!-- Shayari -->
+    <div class="shayari-section">
+        <div class="shayari-text">
+            <span class="line">"তোমাকে ভালোবাসি এ কথাটি বলার জন্য নয়,</span>
+            <span class="line">তোমাকে ভালোবাসি এ কথাটি অনুভব করার জন্য।"</span>
+            <span class="line">"তুমি আমার চাঁদ নও, কারণ চাঁদ রাতে দেখা যায়,</span>
+            <span class="line">তুমি আমার সূর্য, কারণ তুমি আমার জীবনকে আলোকিত করো।"</span>
+        </div>
+    </div>
+
+    <!-- Message -->
+    <div class="message-section">
+        <div class="message-box">
+            <div class="message-text">
+                <p><span class="highlight-name">ইভা,</span></p>
+                <p>আমি তোমাকে অনেক আগে থেকেই পছন্দ করতাম,</p>
+                <p>কিন্তু তোমাকে বলা হয়নি।</p>
+                <p>আমি তোমাকে অনেক ভালোবাসি,</p>
+                <p>কিন্তু কখনো বলা হয়নি।</p>
+                <p>আজ আমি বলতে চাই,</p>
+                <p>তাও আমার ওয়েবসাইটের মাধ্যমে তোমাকে জানিয়ে দিলাম...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button -->
+    <div class="button-section">
+        <button class="reveal-btn" onclick="revealLove()" id="revealBtn">
+            💌 ক্লিক করো — আমার হৃদয়ের কথা শুনো
+        </button>
+
+        <!-- Love Box -->
+        <div class="love-box" id="loveBox">
+            <div class="love-text">I Love You</div>
+            <div class="love-subtext">তোমাকে অনেক ভালোবাসি ইভা ❤️</div>
+
+            <!-- Response Buttons -->
+            <div class="response-section" id="responseSection">
+                <div style="margin-top: 30px; color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 15px;">
+                    তুমি কি আমাকে ভালোবাসো?
+                </div>
+                <a class="response-btn btn-yes" id="yesBtn" href="#" onclick="handleResponse('yes'); return false;">
+                    হ্যাঁ, আমিও তোমাকে ভালোবাসি 💚
+                </a>
+                <a class="response-btn btn-no" id="noBtn" href="#" onclick="handleResponse('no'); return false;">
+                    দুঃখিত, আমি পারব না 😔
+                </a>
+                <div class="final-message" id="finalMessage"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Settings (Hidden initially) -->
+    <div class="settings-box" id="settingsBox">
+        <h3>🔔 নোটিফিকেশন সেটআপ</h3>
+        <p>ইভা যখন "হ্যাঁ" বা "না" বলবে, তখন আপনার ফোনে মেসেজ পেতে নিচের তথ্যগুলো দিন:</p>
+
+        <div class="input-group">
+
+            <input type="text" id="whatsappNum" placeholder="8801302830308" maxlength="13">
+        </div>
+
+        <div class="input-group">
+            <input type="email" id="emailAddr" placeholder="rifatkhan.km.com@email.com">
+        </div>
+
+        <button class="save-btn" onclick="saveSettings()">💾 সেটিংস সেভ করুন</button>
+
+        <div class="notification-info" id="notificationInfo">
+            <h4>✅ সেটআপ সম্পূর্ণ!</h4>
+            <p id="notifyText"></p>
+            <a class="whatsapp-link" id="whatsappLink" href="#" target="_blank">
+                📲 WhatsApp-এ মেসেজ পাঠান
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Store settings
+    let userSettings = {
+        whatsapp: '',
+        email: ''
+    };
+
+    function revealLove() {
+        const btn = document.getElementById('revealBtn');
+        const loveBox = document.getElementById('loveBox');
+        const responseSection = document.getElementById('responseSection');
+
+        btn.style.transition = 'all 0.5s ease';
+        btn.style.opacity = '0';
+        btn.style.transform = 'scale(0.8)';
+
+        setTimeout(() => {
+            btn.style.display = 'none';
+            loveBox.style.display = 'block';
+
+            setTimeout(() => {
+                responseSection.style.display = 'block';
+            }, 2000);
+
+            createCelebration();
+        }, 500);
+    }
+
+    function createCelebration() {
+        for (let i = 0; i < 30; i++) {
+            setTimeout(() => {
+                const heart = document.createElement('div');
+                heart.innerHTML = ['❤️', '💖', '💕', '💗', '💝'][Math.floor(Math.random() * 5)];
+                heart.style.position = 'fixed';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = '100%';
+                heart.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                heart.style.animation = `heartFloat ${Math.random() * 4 + 3}s ease-out forwards`;
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '1000';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 7000);
+            }, i * 100);
+        }
+    }
+
+    function saveSettings() {
+        const whatsapp = document.getElementById('whatsappNum').value.trim();
+        const email = document.getElementById('emailAddr').value.trim();
+
+        if (!whatsapp && !email) {
+            alert('অন্তত একটি নম্বর বা ইমেইল দিন!');
+            return;
+        }
+
+        userSettings.whatsapp = whatsapp;
+        userSettings.email = email;
+
+        // Save to localStorage
+        localStorage.setItem('rifatProposalSettings', JSON.stringify(userSettings));
+
+        const infoBox = document.getElementById('notificationInfo');
+        const notifyText = document.getElementById('notifyText');
+
+        let msg = '';
+        if (whatsapp) {
+            msg += `WhatsApp: ${whatsapp}\n`;
+        }
+        if (email) {
+            msg += `Email: ${email}\n`;
+        }
+        msg += '\nএখন ইভা যখনই "হ্যাঁ" বা "না" বলবে, আপনি মেসেজ পাবেন!';
+
+        notifyText.innerText = msg;
+        infoBox.style.display = 'block';
+
+        // Update WhatsApp link for testing
+        if (whatsapp) {
+            const testMsg = encodeURIComponent('🧪 টেস্ট: নোটিফিকেশন সিস্টেম সেটআপ সম্পূর্ণ!\n\nKM Rifat Proposal Website');
+            document.getElementById('whatsappLink').href = `https://wa.me/${whatsapp}?text=${testMsg}`;
+        }
+    }
+
+    function handleResponse(type) {
+        const finalMessage = document.getElementById('finalMessage');
+        const settingsBox = document.getElementById('settingsBox');
+
+        // Load saved settings
+        const saved = localStorage.getItem('rifatProposalSettings');
+        if (saved) {
+            userSettings = JSON.parse(saved);
+        }
+
+        if (type === 'yes') {
+            finalMessage.innerHTML = '🎉 তোমাকে অনেক অনেক ভালোবাসা! আমাদের নতুন জীবন শুরু হোক! 💕✨';
+            finalMessage.style.color = '#00ff88';
+
+            // Send notification
+            sendNotification('yes');
+
+            // Big celebration
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = ['❤️', '💖', '💕', '💗', '💝', '🎉', '✨'][Math.floor(Math.random() * 7)];
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.top = Math.random() * 100 + '%';
+                    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    heart.style.animation = `fadeIn 0.5s ease-out`;
+                    heart.style.pointerEvents = 'none';
+                    heart.style.zIndex = '1000';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 80);
+            }
+        } else {
+            finalMessage.innerHTML = 'ঠিক আছে, তোমার সিদ্ধান্তকে আমি সম্মান করি। তোমার জন্য শুভকামনা রইল। 🌸';
+            finalMessage.style.color = '#ff4757';
+
+            // Send notification
+            sendNotification('no');
+        }
+
+        // Show settings if not configured
+        if (!userSettings.whatsapp && !userSettings.email) {
+            setTimeout(() => {
+                settingsBox.style.display = 'block';
+                settingsBox.scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        }
+    }
+
+    function sendNotification(type) {
+        const saved = localStorage.getItem('rifatProposalSettings');
+        if (!saved) return;
+
+        const settings = JSON.parse(saved);
+        const timestamp = new Date().toLocaleString('bn-BD');
+
+        let message = '';
+        if (type === 'yes') {
+            message = `🎉🎉🎉\n\n✅ ইভা প্রপোজাল অ্যাকসেপ্ট করেছে!\n\n💚 ইভা বলেছে: \"হ্যাঁ, আমিও তোমাকে ভালোবাসি!\"\n\n📅 সময়: ${timestamp}\n\n💖 KM Rifat Proposal Website`;
+        } else {
+            message = `😔😔😔\n\n❌ ইভা প্রপোজাল রিজেক্ট করেছে।\n\n💔 ইভা বলেছে: \"দুঃখিত, আমি পারব না।\"\n\n📅 সময়: ${timestamp}\n\n🌸 KM Rifat Proposal Website`;
+        }
+
+        const encodedMsg = encodeURIComponent(message);
+
+        // WhatsApp notification
+        if (settings.whatsapp) {
+            const waUrl = `https://wa.me/${settings.whatsapp}?text=${encodedMsg}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // Email notification
+        if (settings.email) {
+            const subject = type === 'yes' ? '🎉 ইভা প্রপোজাল অ্যাকসেপ্ট করেছে!' : '❌ ইভা প্রপোজাল রিজেক্ট করেছে';
+            const emailUrl = `mailto:${settings.email}?subject=${encodeURIComponent(subject)}&body=${encodedMsg}`;
+            window.location.href = emailUrl;
+        }
+
+        // Also try SMS
+        if (settings.whatsapp) {
+            const smsUrl = `sms:${settings.whatsapp}?body=${encodedMsg}`;
+            // Try to open SMS as fallback
+            setTimeout(() => {
+                window.location.href = smsUrl;
+            }, 2000);
+        }
+    }
+
+    // Load settings on page load
+    window.onload = function() {
+        const saved = localStorage.getItem('rifatProposalSettings');
+        if (saved) {
+            userSettings = JSON.parse(saved);
+            document.getElementById('whatsappNum').value = userSettings.whatsapp || '';
+            document.getElementById('emailAddr').value = userSettings.email || '';
+        }
+    };
+</script>
+</body>
+</html>
